@@ -6,7 +6,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 )
-
+// Database credentials
 const (
 	host     = "localhost"
 	port     = 5432
@@ -14,7 +14,7 @@ const (
 	password = "siva"
 	dbname   = "dating"
 )
-
+// DB is used to connect to database
 var DB *gorm.DB
 
 func con1() {
