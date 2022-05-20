@@ -8,6 +8,6 @@ import (
 func main() {
 
 	con1()
-	//populate()
+	populate()
 	route()
 }
