@@ -7,7 +7,7 @@ import (
 // Main function
 func main() {
 
-	con2()
+	con1()
 	populate()
 	route()
 }
