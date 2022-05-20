@@ -6,7 +6,8 @@ import (
 
 // Main function
 func main() {
-	// pop()
-	con()
+
+	con1()
+	//populate()
 	route()
 }

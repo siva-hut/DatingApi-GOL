@@ -1,8 +1,3 @@
-# DatingApi-GO
+**Trademarkia tasks**
 
-Work remaining:
-  1. Proper modeling
-  2. Creating appropriate error hangling
-  3. Format response JSON
-  4. Comments
-  5. Deployment
+*Link for documentation:* https://documenter.getpostman.com/view/21067498/UyxnF5tu
