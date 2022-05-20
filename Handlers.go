@@ -7,12 +7,14 @@ import (
 
 	"github.com/gorilla/mux"
 )
-
+// function to get users who are within the given distance
 func getusers(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var input getuser
+	// Reading the post json 
 	_ = json.NewDecoder(r.Body).Decode(&input)
 	var person User
+	// result stores the users who are within the given distance
 	var result = finduser{}
 	DB.Where("Id = ?", input.Id).First(&person)
 	if person == (User{}) {
@@ -38,11 +40,12 @@ func getusers(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(result)
 	}
 }
-
+// function to return the user ID's who like each other
 func getmatches(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	map1 := make(map[helper]int)
 	var likes []like
+	// Return Json stored in result
 	var result = match{}
 	result.Status = "Successful"
 	DB.Find(&likes)
@@ -65,7 +68,7 @@ func getmatches(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(result)
 }
-
+// Find users who's name contains the substring q
 func findusers(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
